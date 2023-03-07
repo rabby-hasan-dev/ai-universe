@@ -99,26 +99,24 @@ const displayAiDetails = (Ai) => {
   console.log(Ai.data);
   const displayAiDetailsCard = document.getElementById('display-ai-details');
 
-  // const detailsDiv = document.createElement('div');
-  // detailsDiv.classList.add('ai-details');
   displayAiDetailsCard.innerHTML = `
 
-  <div class=" w-50 p-4 mb-3 bg-danger-subtle rounded " style="max-width: 18rem;">
-                <div class="header bg-warning  ">
-                <p> ${Ai.data.description}</p>
+  <div class=" card p-4 bg-danger-subtle rounded mx-auto border border-danger " >
+                <div class="header fs-4">
+                <p class="mb-3" > ${Ai.data.description}</p>
                 </div>
-                <div class="body d-flex justify-content-between ">
-                <div class="p-2 bg-secondary-subtle" >
-                ${Ai.data.pricing[0].plan}
+                <div class="body row row-cols-3 g-4  ">
+                <div class="p-2 text-success bg-secondary-subtle rounded text-center  m-auto " >
                 ${Ai.data.pricing[0].price}
+                ${Ai.data.pricing[0].plan}
                </div>
-               <div class="p-2 bg-secondary-subtle">
-                ${Ai.data.pricing[1].plan}
+               <div class="p-2 bg-secondary-subtle rounded text-warning text-center  m-auto">
                ${Ai.data.pricing[1].price}
+               ${Ai.data.pricing[1].plan}
                </div>
-               <div class="p-2 bg-secondary-subtle">
-                ${Ai.data.pricing[2].plan}
+               <div class="p-2 text-danger bg-secondary-subtle rounded text-center m-auto">
                ${Ai.data.pricing[2].price}
+               ${Ai.data.pricing[2].plan}
                </div>
                 </div>
                 <div class="footer d-flex ">
@@ -141,22 +139,24 @@ const displayAiDetails = (Ai) => {
                 </div>
               </div>
               <!-- banner section -->
-            
-              <div class="card  w-50 p-3 rounded "> 
-                <img src="${Ai.data.image_link} " class="rounded fluid" alt="image">
-                <div >
-                  <h2> ${Ai.data.input_output_examples[0].input}</h2>
-                  <p>${Ai.data.input_output_examples[0].output}</p>
+
+            <div class="card p-4 rounded  " style="width: 18rem;">
+                <img src="${Ai.data.image_link[0]}" class="card-img-top rounded" alt="image">
+                <div class="card-body">
+                <h2> ${Ai.data.input_output_examples[0].input}</h2>
+                <p>${Ai.data.input_output_examples[0].output}</p>
                 </div>
+            </div>
+
 
 
 
 
   
   `
-  
-  // displayAiDetailsCard.appendChild(detailsDiv);
-  
+
+
+
 
 }
 
