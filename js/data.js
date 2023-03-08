@@ -28,7 +28,8 @@ const displayAiData = (data) => {
   // display all data
 
   data.forEach(data => {
-    // console.log(data);
+    // console.log(data.published_in);
+    
     const hubDive = document.createElement('div');
     hubDive.classList.add('col');
     hubDive.innerHTML = `
@@ -96,7 +97,7 @@ const loadAiDetails = (id) => {
 }
 
 const displayAiDetails = (Ai) => {
-  console.log(Ai.data);
+  // console.log(Ai.data);
   const displayAiDetailsCard = document.getElementById('display-ai-details');
 
   displayAiDetailsCard.innerHTML = `
@@ -123,9 +124,9 @@ const displayAiDetails = (Ai) => {
                 <div class="features">
                   <h3>Features</h3>
                   <ul>
-                    <li>${Ai.data.features.feature_name} </li>
-                    <li>Multilingual support</li>
-                    <li> Seamless integration</li>
+                    <li>${Ai.data.features[1].feature_name} </li>
+                    <li>${Ai.data.features[2].feature_name}</li>
+                    <li>${Ai.data.features[3].feature_name}</li>
                   </ul>
                 </div>
                 <div class="Integrations">
@@ -148,16 +149,8 @@ const displayAiDetails = (Ai) => {
                 </div>
             </div>
 
-
-
-
-
-  
   `
-
-
-
-
+  
 }
 
 
